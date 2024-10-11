@@ -1,5 +1,12 @@
 # Midi-Model
 
+## This is part of a pipeline of creation-streaming MIDI interacting with Roblox
+
+Development points
+
+1. Flask API server
+2. Variation of the model input
+
 ## Midi event transformer for music generation
 
 ![](./banner.png)

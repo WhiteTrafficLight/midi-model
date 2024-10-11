@@ -1,3 +1,4 @@
+#model configuration including train, loading pre-trained model, midi generation
 import json
 from typing import Union, Dict, Any
 

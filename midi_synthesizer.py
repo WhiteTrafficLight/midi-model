@@ -1,3 +1,4 @@
+###This script sythesize audio files from given midi data
 from threading import Lock
 
 import fluidsynth

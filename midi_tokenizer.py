@@ -1,3 +1,47 @@
+"""
+MIDI Tokenizer Script - Versions 1 and 2
+----------------------------------------
+
+This script defines two classes, MIDITokenizerV1 and MIDITokenizerV2, each providing functionality 
+to tokenize MIDI data for deep learning applications. These classes are designed to convert MIDI events 
+into token sequences suitable for music generation and analysis models. While both versions share 
+core functionalities, they differ in their level of detail and supported features.
+
+Key Features of MIDITokenizerV1:
+- **Event Support**: 
+  - Handles standard MIDI events such as `note`, `patch_change`, `control_change`, and `set_tempo`.
+  - Utilizes basic parameters for events, including `track`, `duration`, `channel`, `pitch`, and `velocity`.
+- **Tokenization**: 
+  - Converts MIDI data to token sequences, with options for beginning-of-sequence (BOS) and end-of-sequence (EOS) tokens.
+  - Includes methods for detokenizing the sequence back into MIDI event lists.
+- **Quality Analysis**:
+  - Provides a `check_quality` method to evaluate MIDI sequences, focusing on attributes like note density, alignment, and tonality.
+- **Augmentation**:
+  - Includes augmentation methods for pitch, velocity, control values, and tempo to increase data variety during model training.
+  
+Key Features of MIDITokenizerV2:
+- **Extended Event Support**:
+  - Adds support for more complex MIDI events such as `time_signature` and `key_signature`, in addition to the events handled by V1.
+  - Allows for detailed parameter handling, including time and key signatures.
+- **Advanced Tokenization**:
+  - Offers enhanced tokenization with key signature detection and quantization of time values.
+  - Supports track and channel remapping for optimized MIDI structuring.
+- **Image Representation**:
+  - Converts MIDI token sequences to images with color-coded notes, tracks, and channels, providing a visual representation of the MIDI structure.
+- **Improved Quality Checks**:
+  - Performs detailed quality checks on MIDI sequences, including piano ratio and note bandwidth checks.
+  - Analyzes tonality and alignment to verify the structural integrity of the music.
+  
+Both versions are aimed at converting MIDI data into structured token sequences that preserve the musical characteristics 
+and structure. MIDITokenizerV1 is suitable for basic MIDI tasks, while MIDITokenizerV2 is optimized for more complex compositions 
+and applications requiring detailed music analysis.
+
+Usage:
+- Use MIDITokenizerV1 for simpler tasks that require basic MIDI tokenization.
+- Use MIDITokenizerV2 for advanced applications where extended event handling and optimized MIDI representation are needed.
+"""
+
+
 import random
 from typing import Dict, Any
 
